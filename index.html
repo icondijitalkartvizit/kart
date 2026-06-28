@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-   <script>
+   <<script>
   // Sayfa yüklendiğinde çalışır
   window.onload = function() {
     // Eğer bu oturumda kart zaten okutulup sayfa açıldıysa
     if (sessionStorage.getItem('card_opened')) {
       // Sayfa içeriğini temizle veya kullanıcıyı uyar/başka yere yönlendir
-      document.body.innerHTML = "<h1>Bu kart zaten bir kez okutuldu.</h1><p>Tekrar açmak için kartı yeniden okutun.</p>";
+      document.body.innerHTML = "<h1>Bu kart zaten bir kez okutuldu.</h1><p>Tekrar açmak için tarayıcı sekmesini kapatıp kartı yeniden okutun.</p>";
     } else {
       // İlk kez açılıyorsa, açıldığına dair işareti koy
       sessionStorage.setItem('card_opened', 'true');
     }
   };
-   </script>
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dijital Kartvizit</title>
@@ -177,50 +178,6 @@
             border: none;
             cursor: pointer;
             color: #94a3b8;
-        }
-
-        /* Güvenlik Ekranı Tasarımı */
-        #hata-ekrani {
-            display: none;
-            width: 100%;
-            max-width: 420px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .error-card {
-            background: #ffffff;
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .error-icon {
-            font-size: 48px;
-            color: #ef4444;
-            margin-bottom: 20px;
-        }
-
-        .error-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .error-desc {
-            font-size: 15px;
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        .error-footer {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1.5px dashed #e2e8f0;
-            font-size: 14px;
-            font-weight: 600;
-            color: #0f172a;
         }
     </style>
 </head>
