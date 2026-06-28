@@ -1,5 +1,19 @@
 <html lang="tr">
 <head>
+   <script>
+  // Sayfa yüklendiğinde çalışır
+  window.onload = function() {
+    // Eğer bu oturumda kart zaten okutulup sayfa açıldıysa
+    if (sessionStorage.getItem('card_opened')) {
+      // Sayfa içeriğini temizle veya kullanıcıyı uyar/başka yere yönlendir
+      document.body.innerHTML = "<h1>Bu kart zaten bir kez okutuldu.</h1><p>Tekrar açmak için tarayıcı sekmesini kapatıp kartı yeniden okutun.</p>";
+    } else {
+      // İlk kez açılıyorsa, açıldığına dair işareti koy
+      sessionStorage.setItem('card_opened', 'true');
+    }
+  };
+   </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dijital Kartvizit</title>
